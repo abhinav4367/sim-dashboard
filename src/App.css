@@ -1,38 +1,144 @@
-.App {
-  text-align: center;
+/* Application Specific Styles */
+.app-container {
+  display: flex;
+  flex-direction: row-reverse; /* Ensure vertical layout */
+  margin-top: 20px;
+  padding-left: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
+.navbar-container {
+  background-color: #f0f0f0;
+  padding: 10px;
+}
+
+.sidemenu-container {
+  /* Add styles for sidemenu container */
+}
+
+.main-content-container {
+  padding-top: 80px; /* Adjust padding-top to match NavBar's height */
+  display: flex;
+  flex-direction: column; /* Change to row for horizontal layout */
+  align-items: center; /* Align items to the top */
+  justify-content: space-between; /* Space out the children */
+  width: 100%;
+  height: 100%;
+  gap: 8px; /* Add gap between children */
+}
+
+.title-container {
+  text-align: center;
+  margin-left: 90px;
+}
+
+.week-navigation-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 8px 0;
+  margin-left: 100px;
+}
+
+.chart-navigation-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;
+  margin: 0 5px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  background-color: #007afe;
+  color: #fff;
+  transition: all 0.3s;
+  font-size: 12px;
+}
+
+.chart-navigation-arrow.left {
+  /* margin-right: 10px; Removed, as margin is handled by .chart-navigation-arrow */
+}
+
+.chart-navigation-arrow.right {
+  /* margin-left: 10px; Removed, as margin is handled by .chart-navigation-arrow */
+}
+
+.week-selector-container {
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+  padding-left: 0;
+}
+
+.chart-container {
+  width: 80%; /* Adjust width as needed */
+  height: 100%;
+  margin-left: 0; /* Remove left margin */
+  margin-top: 16px;
+}
+
+.bottombar-container {
+  width: 90%;
+  margin: 0 auto;
+  margin-right: 90px;
+}
+
+.piechart-container {
+  display: flex;
+  justify-content: center; /* Right-align the pie chart */
+  width: 30%; /* Adjust width as needed */
+  padding-right: 20px; /* Optional: add padding for spacing */
+  margin-top: 60px;
+}
+
+.chart-navigation-arrow.disabled {
+  opacity: 0.5;
+  cursor: default;
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Add style for the navbar */
+.css-116i7dw-MuiPaper-root-MuiAppBar-root {
+  z-index: 100;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Styles for TicketCounts Component */
+.ticket-counts {
   display: flex;
-  flex-direction: column;
+  justify-content: center; /* Center horizontally */
+  margin-top: 10px; /* Add some space above */
+  gap: 8px;
+}
+
+.ticket-count {
+  padding: 5px 10px;
+  margin: 0 5px;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-right: 60px;
+}
+
+.ticket-count .date {
+  font-size: 12px;
+  color: #777;
+  margin-top: 5px;
+}
+
+.content-wrapper {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 0px;
+  padding: 20px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-content-container {
+    flex-direction: column; /* Stack vertically on small screens */
   }
-  to {
-    transform: rotate(360deg);
+
+  .piechart-container,
+  .chart-container {
+    width: 100%; /* Full width on small screens */
+    margin-left: 0; /* Remove left margin */
+    padding-right: 0; /* Remove right padding */
   }
 }
